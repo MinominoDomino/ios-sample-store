@@ -62,9 +62,9 @@
 			children = (
 				3AABD5082287190900E1F10D /* SplashView */,
 				3AABD4F6228718AF00E1F10D /* AppDelegate.swift */,
+				3AABD50D228719B800E1F10D /* DeviceConfig.swift */,
 				3AABD50B2287194800E1F10D /* FirstViewController.swift */,
 				3AABD5092287193C00E1F10D /* First.storyboard */,
-				3AABD50D228719B800E1F10D /* DeviceConfig.swift */,
 				3AABD4FD228718B500E1F10D /* Assets.xcassets */,
 				3AABD4FF228718B500E1F10D /* LaunchScreen.storyboard */,
 				3AABD502228718B500E1F10D /* Info.plist */,

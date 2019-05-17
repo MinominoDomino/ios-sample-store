@@ -10,20 +10,15 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    var rgbNumber: String = ""
     @IBOutlet weak var colorRGB: UILabel?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print("view Did Load")
-        colorRGB?.text = "didload"
-        print("\(colorRGB?.text) in didload")
-        
+        colorRGB?.text = rgbNumber
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("view Will Appear")
-        print("\(colorRGB?.text) in appear")
-        //colorRGB?.text = "appear"
     }
     
     @IBAction func backButton(_ sender: Any) {
@@ -31,15 +26,14 @@ class DetailViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+
     }
-    */
+ 
 
 }
 

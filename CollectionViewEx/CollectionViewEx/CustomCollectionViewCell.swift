@@ -9,5 +9,6 @@
 import UIKit
 
 class CustomCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var cellLabel: UILabel?
     
 }

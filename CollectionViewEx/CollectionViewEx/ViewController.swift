@@ -18,7 +18,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var spacingCells: UITextField!
     @IBOutlet weak var spacingLines: UITextField!
     
-    var delegate: SendDataDelegate?
     var colorList = [0x9966ff,0x33ff00,0x442345,0xff33ff44,0x342598,0xcc33cc,0xffcc33,0xb431ff,0xff00e6,0x9c6300,0x636331,0x344802,0x123453,0x580034,0x380233
         ,0x9c6331,0xff639c,0xff63ce,0xff63ff,0xff9c00,0xff9c31,0xff9c63,0xff9c9c,0xff9cce,0xff9cff,0xffce00,0xffce31,0xffce63]
     var collectionList: [UIColor] = []
@@ -72,16 +71,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         layout?.minimumInteritemSpacing = CGFloat(cell)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let detailView = self.storyboard?.instantiateViewController(withIdentifier: "DetailView") as? DetailViewController else { return }
-        detailView.rgbNumber = "e123"
-        delegate?.sendData(data: "tetetet123")
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "show"{
-            let vc = segue.destination as! DetailViewController
-            vc.rgbNumber = "df"
+        if let cell = sender as? CustomCollectionViewCell,
+            let indexPath = MyCollectionView.indexPath(for: cell) {
+            let vc = segue.destination as? DetailViewController
+            vc?.segueValue = String(format: "%02x", colorList[indexPath.row])
         }
     }
     
@@ -103,8 +97,3 @@ extension UIColor {
         return UIColor(red: CGFloat(r / 255.0), green: CGFloat(g / 255.0), blue:CGFloat(b / 255.0), alpha: CGFloat(alpha))
     }
 }
-
-protocol SendDataDelegate {
-    func sendData(data: String)
-}
-

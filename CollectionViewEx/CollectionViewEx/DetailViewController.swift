@@ -9,13 +9,12 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    
-    var rgbNumber: String = ""
+    var segueValue = ""
     @IBOutlet weak var colorRGB: UILabel?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        colorRGB?.text = rgbNumber
+        colorRGB?.text = segueValue
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -25,20 +24,7 @@ class DetailViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-    }
- 
-
-}
-
-extension DetailViewController: SendDataDelegate {
-    func sendData(data: String) {
-        colorRGB?.text = data
     }
 }

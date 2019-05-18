@@ -209,7 +209,7 @@
                         <viewLayoutGuide key="safeArea" id="xbc-0P-EjS"/>
                     </view>
                     <connections>
-                        <outlet property="colorRGB" destination="dY7-Yf-Clc" id="w3j-yK-EQD"/>
+                        <outlet property="colorRGB" destination="dY7-Yf-Clc" id="lUM-eP-vg5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ixh-Wi-44c" userLabel="First Responder" sceneMemberID="firstResponder"/>

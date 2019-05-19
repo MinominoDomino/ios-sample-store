@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+    
         guard let bottomView = storyboard?.instantiateViewController(withIdentifier: "BottomContainerView") else { return }
         addChild(bottomView)
         //bottomView.didMove(toParent: self)
@@ -30,6 +30,5 @@ class ViewController: UIViewController {
             vc.removeFromParent()
         }
     }
-    
 }
 

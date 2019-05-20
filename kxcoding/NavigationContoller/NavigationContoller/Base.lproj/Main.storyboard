@@ -67,7 +67,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2VB-Pu-t0G"/>
+                    <navigationItem key="navigationItem" title="First" id="2VB-Pu-t0G">
+                        <barButtonItem key="backBarButtonItem" title="뒤로가즈아" id="heA-Ro-pwy"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="aeW-rX-2CT"/>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" id="6Vp-oC-Gbh">
+                                <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="Pe6-Mz-S8y">
+                                    <rect key="frame" x="343" y="6.5" width="51" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <connections>
+                                        <action selector="switcherButton:" destination="BYZ-38-t0r" eventType="valueChanged" id="juD-Gv-n3k"/>
+                                    </connections>
+                                </switch>
+                            </barButtonItem>
+                            <barButtonItem title="Item" id="QIE-Ej-xXI"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -129,6 +144,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="69f-8C-q76"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Second" id="IDM-Dw-C8h"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ea1-bD-srH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

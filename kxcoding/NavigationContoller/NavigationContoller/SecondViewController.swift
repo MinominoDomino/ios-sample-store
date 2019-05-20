@@ -10,10 +10,18 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    @objc func addBarButtonItems() {
+        let btn1 = UIBarButtonItem(barButtonSystemItem: .action, target: nil, action: nil)
+        let btn2 = UIBarButtonItem(title: "New", style: .plain, target: nil, action: nil)
+        let switcher = UIBarButtonItem(customView: UISwitch())
+        navigationItem.setRightBarButtonItems([switcher, btn2, btn1], animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+        navigationItem.leftItemsSupplementBackButton = true
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonItems))
     }
     
     @IBAction func popButton(_ sender: Any) {
@@ -25,6 +33,7 @@ class SecondViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
         
     }
+    
     /*
     // MARK: - Navigation
 

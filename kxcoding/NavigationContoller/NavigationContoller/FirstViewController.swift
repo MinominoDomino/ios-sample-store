@@ -10,6 +10,21 @@ import UIKit
 
 class FirstViewController: UIViewController {
 
+    @IBAction func switcherButton(_ sender: UISwitch) {
+        switch sender.isOn {
+        case true:
+            navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+            if var list = navigationItem.rightBarButtonItems {
+                let button = UIBarButtonItem(title: "Item", style: .plain, target: nil, action: nil)
+                list.append(button)
+                navigationItem.rightBarButtonItems = list
+            }
+        case false:
+            navigationItem.leftBarButtonItem = nil
+            let list = navigationItem.rightBarButtonItems?.dropLast()
+            navigationItem.rightBarButtonItems = Array(list!)
+        }
+    }
     @IBAction func codeButton(_ sender: Any) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "SecondViewController") else {
             return
@@ -25,6 +40,7 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        navigationItem.backBarButtonItem?.title = "뒤로가즈아"
     }
     
     @IBAction func unwindToFirstView(_ unwindSegue: UIStoryboardSegue) {

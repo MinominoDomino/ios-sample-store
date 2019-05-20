@@ -10,10 +10,19 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    @IBAction func toggleButton(_ sender: Any) {
+        let toolbarHidden = navigationController?.isToolbarHidden ?? false
+        navigationController?.setToolbarHidden(!toolbarHidden, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+        let barItem1 = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+        let barItem2 = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: nil)
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        setToolbarItems([flexibleSpace, barItem1, flexibleSpace, barItem2, flexibleSpace], animated: true)
     }
     
 
